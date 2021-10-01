@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class alien : MonoBehaviour
+public class Alien : MonoBehaviour
 {
     [SerializeField] private float maxHealthPoints = 1;
 
@@ -42,10 +42,11 @@ public class alien : MonoBehaviour
             }
         }
 
-        else if (collision.gameObject.tag == "player")
+        else if (collision.gameObject.tag == "Player")
         {
             die();
         }
+        Debug.Log("Entered coll");
     }
 
     private void OnEnable()
