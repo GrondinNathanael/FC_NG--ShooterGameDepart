@@ -426,10 +426,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160579255304023850, guid: 806dd4019cc5e0345b9e556258fb1961,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2993635036177043464, guid: 806dd4019cc5e0345b9e556258fb1961,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2993635036177043464, guid: 806dd4019cc5e0345b9e556258fb1961,
         type: 3}
@@ -491,6 +496,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceMarine
       objectReference: {fileID: 0}
+    - target: {fileID: 6946717146395103497, guid: 806dd4019cc5e0345b9e556258fb1961,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6233331417251039615, guid: fd62ff2bd28f33548a4cd3f3e62a03fc,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
 --- !u!4 &419280459 stripped
@@ -1168,7 +1179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f78b096b427d419f9918e4ae4fc4aec, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7f78b096b427d419f9918e4ae4fc4aec, type: 3}
       propertyPath: m_LocalScale.x
