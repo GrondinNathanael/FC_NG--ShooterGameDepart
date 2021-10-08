@@ -500,9 +500,10 @@ PrefabInstance:
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 6233331417251039615, guid: fd62ff2bd28f33548a4cd3f3e62a03fc,
+      objectReference: {fileID: 2449098431368784778, guid: de5b0492efb454c45aa7f8f84ddc0a47,
         type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 160579255304023850, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
 --- !u!4 &419280459 stripped
 Transform:
@@ -1516,6 +1517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd76d6e110467804fbc8a24435a9215e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alienPrefab: {fileID: 1326983052875474, guid: e5bafbba3a71297409e8f8d6cc789c8b,
+    type: 3}
   portals:
   - {fileID: 1014524826}
   - {fileID: 2052719247}
@@ -1525,6 +1528,9 @@ MonoBehaviour:
   - {fileID: 1526178091}
   - {fileID: 1927467857}
   - {fileID: 1767066431}
+  secondsBeforeSpawn: 5
+  numberAliensAtOneTime: 25
+  numberMaxAliens: 500
 --- !u!4 &1740324607
 Transform:
   m_ObjectHideFlags: 0

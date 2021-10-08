@@ -32,7 +32,20 @@ public class HealthManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "bullet")
+        if (collision.gameObject.tag == "Bullet")
+        {
+            looseHealth();
+
+            if (healthPoints <= 0)
+            {
+                die();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")
         {
             looseHealth();
 
