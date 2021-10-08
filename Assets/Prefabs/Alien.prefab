@@ -1171,7 +1171,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 3.2
-  m_Speed: 8
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -1232,7 +1232,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.25
-  m_Center: {x: 0, y: 3.25, z: 0}
+  m_Center: {x: 0, y: 2.35, z: 0}
 --- !u!1 &1344034646348482
 GameObject:
   m_ObjectHideFlags: 0
