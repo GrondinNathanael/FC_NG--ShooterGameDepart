@@ -6,8 +6,10 @@ public class HealthManager : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int maxHealthPoints = 1;
+    [SerializeField] private float maxInvincibilityCooldown = 2;
 
     private int healthPoints;
+    private float invincibilityCooldown = 0;
     private int fallingVelocity = -1;
 
     // Start is called before the first frame update
@@ -19,7 +21,7 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (invincibilityCooldown > 0) invincibilityCooldown -= Time.deltaTime;
     }
 
     void looseHealth(int points = 1)
@@ -50,8 +52,9 @@ public class HealthManager : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("Player"))
         {
-            if(gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity)
+            if(gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity && invincibilityCooldown <= 0)
             {
+                invincibilityCooldown = maxInvincibilityCooldown;
                 looseHealth();
                 gameManager.changeHealth(healthPoints);
                 if (healthPoints <= 0)
