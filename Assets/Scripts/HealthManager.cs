@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private float maxHealthPoints = 1;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private int maxHealthPoints = 1;
 
-    private float healthPoints;
+    private int healthPoints;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,14 @@ public class HealthManager : MonoBehaviour
 
     }
 
-    void looseHealth(float points = 1)
+    void looseHealth(int points = 1)
     {
         healthPoints -= points;
+    }
+
+    void gainHealth(int points = 1)
+    {
+        healthPoints += points;
     }
 
     void die()
@@ -41,10 +47,25 @@ public class HealthManager : MonoBehaviour
                 die();
             }
         }
+        if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("Player"))
+        {
+            looseHealth();
+            gameManager.changeHealth(healthPoints);
+            if (healthPoints <= 0)
+            {
+                die();
+                gameManager.gameOver();
+            }
+        }
     }
 
     private void OnEnable()
     {
         healthPoints = maxHealthPoints;
+    }
+
+    public int getHP()
+    {
+        return healthPoints;
     }
 }
