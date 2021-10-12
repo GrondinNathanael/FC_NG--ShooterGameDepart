@@ -8,6 +8,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private int maxHealthPoints = 1;
 
     private int healthPoints;
+    private int fallingVelocity = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -49,12 +50,15 @@ public class HealthManager : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("Player"))
         {
-            looseHealth();
-            gameManager.changeHealth(healthPoints);
-            if (healthPoints <= 0)
+            if(gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity)
             {
-                die();
-                gameManager.gameOver();
+                looseHealth();
+                gameManager.changeHealth(healthPoints);
+                if (healthPoints <= 0)
+                {
+                    die();
+                    gameManager.gameOver();
+                }
             }
         }
     }
@@ -62,10 +66,5 @@ public class HealthManager : MonoBehaviour
     private void OnEnable()
     {
         healthPoints = maxHealthPoints;
-    }
-
-    public int getHP()
-    {
-        return healthPoints;
     }
 }

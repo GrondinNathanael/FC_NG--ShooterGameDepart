@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AlienManager : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
     [SerializeField] GameObject alienPrefab;
 
     [SerializeField] List<GameObject> portals;
@@ -33,13 +34,21 @@ public class AlienManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(areAllEnemiesDead())
+        {
+            gameManager.win();
+        }
+
         if (totalSpawnedAliens < numberMaxAliens && spawnCooldown <= 0)
         {
-            spawnCooldown = secondsBeforeSpawn;
+            if(portals.Count > 0)
+            {
+                spawnCooldown = secondsBeforeSpawn;
 
-            SpawnAlien();
+                SpawnAlien();
 
-            return;
+                return;
+            }
         }
 
         for (int i = 0; i < portals.Count; i++)
@@ -76,5 +85,20 @@ public class AlienManager : MonoBehaviour
         }
 
         return -1;
+    }
+
+    public bool areAllEnemiesDead()
+    {
+        if(portals.Count > 0) return false;
+
+        foreach (GameObject alien in aliens)
+        {
+            if (alien.activeSelf)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
