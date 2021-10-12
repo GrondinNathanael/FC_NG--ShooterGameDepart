@@ -20,7 +20,7 @@ public class BulletMovement : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
-            transform.Translate(Vector3.forward * velocity);
+            transform.Translate(Vector3.forward * velocity * Time.deltaTime);
             ttl -= Time.deltaTime;
 
             if (ttl <= 0)
@@ -30,7 +30,7 @@ public class BulletMovement : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (gameObject.activeSelf)
         {

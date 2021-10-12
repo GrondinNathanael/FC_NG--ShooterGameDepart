@@ -6,7 +6,7 @@ public class AlienManager : MonoBehaviour
 {
     [SerializeField] GameObject alienPrefab;
 
-    [SerializeField] GameObject[] portals;
+    [SerializeField] List<GameObject> portals;
     [SerializeField] float secondsBeforeSpawn = 3;
 
     [SerializeField] int numberAliensAtOneTime = 20;
@@ -42,12 +42,17 @@ public class AlienManager : MonoBehaviour
             return;
         }
 
+        for (int i = 0; i < portals.Count; i++)
+        {
+            if (!portals[i].gameObject.activeSelf) portals.RemoveAt(i);
+        }
+
         spawnCooldown -= Time.deltaTime;
     }
 
     void SpawnAlien()
     {
-        int portalIndex = Random.Range(0, portals.Length);
+        int portalIndex = Random.Range(0, portals.Count);
 
         Vector3 spawnPosition = portals[portalIndex].transform.position;
 

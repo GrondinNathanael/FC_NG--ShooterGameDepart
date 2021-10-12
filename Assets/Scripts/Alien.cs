@@ -6,14 +6,12 @@ using UnityEngine.AI;
 public class Alien : MonoBehaviour
 {
     private NavMeshAgent navMeshAgent;
-    private Rigidbody alienRigidbody;
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        alienRigidbody = GetComponent<Rigidbody>();
         player = GameObject.FindGameObjectWithTag("Player");
 
         navMeshAgent.enabled = false;
@@ -22,16 +20,16 @@ public class Alien : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (navMeshAgent.enabled) navMeshAgent.SetDestination(player.transform.position);
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         // On active le navMeshAgent quand on touche au sol.
-        if (!navMeshAgent.enabled && collision.gameObject.CompareTag("Terrain"))
+        if (!navMeshAgent.enabled && other.gameObject.CompareTag("Terrain"))
         {
             navMeshAgent.enabled = true;
-            navMeshAgent.SetDestination(player.transform.position);
         }
     }
 }

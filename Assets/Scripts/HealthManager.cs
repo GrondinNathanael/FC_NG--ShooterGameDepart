@@ -30,26 +30,10 @@ public class HealthManager : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Bullet")
-        {
-            looseHealth();
-
-            if (healthPoints <= 0)
-            {
-                die();
-            }
-        }
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("TRIGGERED");
-
-        if (other.gameObject.CompareTag("Bullet") || other.gameObject.tag == "Bullet")
+        if (other.gameObject.CompareTag("Bullet"))
         {
-            Debug.Log("TRIGGERED W/ BULLET");
             looseHealth();
 
             if (healthPoints <= 0)
