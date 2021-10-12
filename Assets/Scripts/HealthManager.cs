@@ -22,7 +22,7 @@ public class HealthManager : MonoBehaviour
 
     void looseHealth(float points = 1)
     {
-        maxHealthPoints -= points;
+        healthPoints -= points;
     }
 
     void die()
@@ -45,8 +45,11 @@ public class HealthManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Bullet")
+        Debug.Log("TRIGGERED");
+
+        if (other.gameObject.CompareTag("Bullet") || other.gameObject.tag == "Bullet")
         {
+            Debug.Log("TRIGGERED W/ BULLET");
             looseHealth();
 
             if (healthPoints <= 0)

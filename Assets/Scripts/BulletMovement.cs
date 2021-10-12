@@ -12,18 +12,18 @@ public class BulletMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gameObject.activeSelf)
+        if (gameObject.activeSelf)
         {
             transform.Translate(Vector3.forward * velocity);
             ttl -= Time.deltaTime;
 
-            if(ttl <= 0)
+            if (ttl <= 0)
             {
                 resetBullet();
             }
@@ -32,10 +32,8 @@ public class BulletMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("yo");
         if (gameObject.activeSelf)
         {
-            Debug.Log("delete");
             resetBullet();
         }
     }
