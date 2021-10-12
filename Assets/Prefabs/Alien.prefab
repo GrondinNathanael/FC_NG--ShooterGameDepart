@@ -1139,6 +1139,7 @@ GameObject:
   - component: {fileID: 3599979555604339650}
   - component: {fileID: 2768837067539370500}
   - component: {fileID: 1100858814434538394}
+  - component: {fileID: 4456677088103940704}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Untagged
@@ -1247,6 +1248,22 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 3.25
   m_Center: {x: 0, y: 2.35, z: 0}
+--- !u!54 &4456677088103940704
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326983052875474}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1344034646348482
 GameObject:
   m_ObjectHideFlags: 0
