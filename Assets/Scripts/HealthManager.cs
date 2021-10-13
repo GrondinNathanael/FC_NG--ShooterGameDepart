@@ -24,17 +24,19 @@ public class HealthManager : MonoBehaviour
         if (invincibilityCooldown > 0) invincibilityCooldown -= Time.deltaTime;
     }
 
-    void looseHealth(int points = 1)
+    public void looseHealth(int points = 1)
     {
         healthPoints -= points;
+        if (gameObject.CompareTag("Player")) gameManager.changeHealth(healthPoints);
     }
 
-    void gainHealth(int points = 1)
+    public void gainHealth(int points = 1)
     {
         healthPoints += points;
+        if (gameObject.CompareTag("Player")) gameManager.changeHealth(healthPoints);
     }
 
-    void die()
+    public void die()
     {
         gameObject.SetActive(false);
 
@@ -52,13 +54,14 @@ public class HealthManager : MonoBehaviour
                 die();
             }
         }
+
         if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("Player"))
         {
-            if(gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity && invincibilityCooldown <= 0)
+            if (gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity && invincibilityCooldown <= 0)
             {
                 invincibilityCooldown = maxInvincibilityCooldown;
                 looseHealth();
-                gameManager.changeHealth(healthPoints);
+
                 if (healthPoints <= 0)
                 {
                     die();

@@ -11,12 +11,14 @@ public class Collectible : MonoBehaviour
 
     private CollectibleManager collectibleManager;
     private PlayerShoot playerShoot;
+    private HealthManager playerHealthManager;
 
     // Start is called before the first frame update
     void Start()
     {
         collectibleManager = GameObject.Find("GameManager").GetComponent<CollectibleManager>();
         playerShoot = GameObject.Find("BulletSpawn").GetComponent<PlayerShoot>();
+        playerHealthManager = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthManager>();
     }
 
     // Update is called once per frame
@@ -47,6 +49,7 @@ public class Collectible : MonoBehaviour
                 break;
 
             case collectibleTypes.Health:
+                playerHealthManager.gainHealth((int)collectValue);
                 break;
         }
     }
