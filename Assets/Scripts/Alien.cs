@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class Alien : MonoBehaviour
 {
+    private CollectibleManager collectibleManager;
     private NavMeshAgent navMeshAgent;
     private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
+        collectibleManager = GameObject.Find("GameManager").GetComponent<CollectibleManager>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -21,7 +23,6 @@ public class Alien : MonoBehaviour
     void Update()
     {
         if (navMeshAgent.enabled) navMeshAgent.SetDestination(player.transform.position);
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,5 +32,10 @@ public class Alien : MonoBehaviour
         {
             navMeshAgent.enabled = true;
         }
+    }
+
+    public void OnDeath()
+    {
+        collectibleManager.handleSpawnCollectible(transform.position);
     }
 }

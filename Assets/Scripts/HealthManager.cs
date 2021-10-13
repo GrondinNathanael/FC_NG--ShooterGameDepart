@@ -28,6 +28,8 @@ public class HealthManager : MonoBehaviour
     void die()
     {
         gameObject.SetActive(false);
+
+        if (this.gameObject.CompareTag("Enemy")) this.gameObject.GetComponent<Alien>()?.OnDeath();
     }
 
     private void OnTriggerEnter(Collider other)

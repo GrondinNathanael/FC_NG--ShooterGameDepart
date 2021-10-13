@@ -32,7 +32,7 @@ public class BulletMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.activeSelf)
+        if (gameObject.activeSelf && !other.CompareTag("Collectible"))
         {
             resetBullet();
         }
