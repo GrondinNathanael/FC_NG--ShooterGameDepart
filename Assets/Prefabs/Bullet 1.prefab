@@ -97,6 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 75
+  ignoredTriggers:
+  - Player
+  - Bullet
+  - Collectible
 --- !u!135 &5008722707753444209
 SphereCollider:
   m_ObjectHideFlags: 0

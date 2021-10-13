@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4462560377992254082}
   - component: {fileID: 786430273113657226}
   - component: {fileID: 2859204364876124574}
+  - component: {fileID: 129468877627687682}
   m_Layer: 0
   m_Name: Portal
   m_TagString: Untagged
@@ -59,6 +60,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 9.6
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &129468877627687682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3937803767353067576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ae5ac6486f3944ab1b53c26ba3fe8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 25
+  counterclockWise: 1
 --- !u!1 &7297834028478472898
 GameObject:
   m_ObjectHideFlags: 0

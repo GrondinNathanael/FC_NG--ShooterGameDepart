@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     [SerializeField] private float velocity = 5f;
+    [SerializeField] private List<string> ignoredTriggers;
 
     private const float MAX_TTL = 3f;
     private float ttl = MAX_TTL;
@@ -32,7 +33,7 @@ public class BulletMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.activeSelf && !other.CompareTag("Collectible"))
+        if (gameObject.activeSelf && !ignoredTriggers.Contains(other.tag))
         {
             resetBullet();
         }

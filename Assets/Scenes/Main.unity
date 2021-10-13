@@ -502,6 +502,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2449098431368784778, guid: de5b0492efb454c45aa7f8f84ddc0a47,
         type: 3}
+    - target: {fileID: 6946717146395103497, guid: 806dd4019cc5e0345b9e556258fb1961,
+        type: 3}
+      propertyPath: tripleBulletsAngle
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 160579255304023850, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
@@ -1568,7 +1573,6 @@ MonoBehaviour:
   - {fileID: 7682405027818894154, guid: d57a65484e20ee742a9aab2a7ea23801, type: 3}
   numberOfEachCollectible: 3
   percentageOfSpawnChances: 15
-  avaibleCollectibles: []
 --- !u!1001 &1767066430
 PrefabInstance:
   m_ObjectHideFlags: 0

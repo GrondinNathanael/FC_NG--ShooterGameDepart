@@ -4,26 +4,51 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    [SerializeField] float rotationSpeed = 50;
-    CollectibleManager collectibleManager;
+    [SerializeField] collectibleTypes type;
+    [SerializeField] float collectValue;
+
+    private enum collectibleTypes { Ammo, Armor, Health }
+
+    private CollectibleManager collectibleManager;
+    private PlayerShoot playerShoot;
 
     // Start is called before the first frame update
     void Start()
     {
         collectibleManager = GameObject.Find("GameManager").GetComponent<CollectibleManager>();
+        playerShoot = GameObject.Find("BulletSpawn").GetComponent<PlayerShoot>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Rotate(0, Time.deltaTime * rotationSpeed, 0);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            collectibleManager.addAvaibleCollectible(gameObject);
+            OnCollect();
         }
     }
+
+    private void OnCollect()
+    {
+        collectibleManager.addAvaibleCollectible(gameObject);
+
+        switch (type)
+        {
+            case collectibleTypes.Ammo:
+                playerShoot.gainTripleBullets(collectValue);
+                break;
+
+            case collectibleTypes.Armor:
+                break;
+
+            case collectibleTypes.Health:
+                break;
+        }
+    }
+
 }

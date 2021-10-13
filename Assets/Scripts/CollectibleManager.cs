@@ -11,7 +11,7 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField] private int percentageOfSpawnChances = 15;
 
     private GameObject[] collectibles;
-    [SerializeField] private List<GameObject> avaibleCollectibles = new List<GameObject>();
+    private List<GameObject> avaibleCollectibles = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
