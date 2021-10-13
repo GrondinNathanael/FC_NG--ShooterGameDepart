@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class HealthManager : MonoBehaviour
 {
-    [SerializeField] private float maxHealthPoints = 1;
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private int maxHealthPoints = 1;
+    [SerializeField] private float maxInvincibilityCooldown = 2;
 
-    private float healthPoints;
+    private int healthPoints;
+    private float invincibilityCooldown = 0;
+    private int fallingVelocity = -1;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +21,17 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (invincibilityCooldown > 0) invincibilityCooldown -= Time.deltaTime;
     }
 
-    void looseHealth(float points = 1)
+    void looseHealth(int points = 1)
     {
         healthPoints -= points;
+    }
+
+    void gainHealth(int points = 1)
+    {
+        healthPoints += points;
     }
 
     void die()
@@ -41,6 +50,20 @@ public class HealthManager : MonoBehaviour
             if (healthPoints <= 0)
             {
                 die();
+            }
+        }
+        if (other.gameObject.CompareTag("Enemy") && gameObject.CompareTag("Player"))
+        {
+            if(gameObject.GetComponent<CharacterController>().velocity.y > fallingVelocity && invincibilityCooldown <= 0)
+            {
+                invincibilityCooldown = maxInvincibilityCooldown;
+                looseHealth();
+                gameManager.changeHealth(healthPoints);
+                if (healthPoints <= 0)
+                {
+                    die();
+                    gameManager.gameOver();
+                }
             }
         }
     }

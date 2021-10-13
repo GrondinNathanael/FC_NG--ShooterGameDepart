@@ -119,6 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2993635036177043464}
   - component: {fileID: 2993635036177043466}
+  - component: {fileID: 5178519104143435397}
   - component: {fileID: 2993635036177043465}
   m_Layer: 0
   m_Name: SpaceMarine
@@ -161,6 +162,19 @@ MonoBehaviour:
   playerSpeed: 35
   gravity: 40
   jumpSpeed: 26
+--- !u!114 &5178519104143435397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993635036177043471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9232c0ec30e85fc4bb05fc0f19e56e27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealthPoints: 5
 --- !u!143 &2993635036177043465
 CharacterController:
   m_ObjectHideFlags: 0
