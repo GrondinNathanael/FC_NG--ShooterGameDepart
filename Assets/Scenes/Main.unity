@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -221,7 +221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &208873448
 GameObject:
@@ -574,8 +574,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282840810}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 145.2, z: 0}
+  m_LocalRotation: {x: 0.24935994, y: 0.000000008344259, z: -0.0000000021418722, w: 0.96841085}
+  m_LocalPosition: {x: 0, y: 30, z: -50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -692,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 2993635036177043464, guid: 806dd4019cc5e0345b9e556258fb1961,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2993635036177043464, guid: 806dd4019cc5e0345b9e556258fb1961,
         type: 3}
@@ -997,7 +997,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457167046}
-  m_LocalRotation: {x: 0.24935995, y: -0.0000000083314236, z: 0.000000002145291, w: 0.9684109}
+  m_LocalRotation: {x: 0.24935995, y: 0.000000008331424, z: -0.0000000021452913, w: 0.9684109}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2594,7 +2594,7 @@ GameObject:
   - component: {fileID: 1740324607}
   - component: {fileID: 1740324608}
   - component: {fileID: 1740324606}
-  - component: {fileID: 1740324608}
+  - component: {fileID: 1740324609}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2660,6 +2660,24 @@ MonoBehaviour:
   multishotText: {fileID: 487784722}
   gameOverText: {fileID: 355365545}
   winText: {fileID: 769614836}
+--- !u!114 &1740324609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740324605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8afe94e0606fd4149ba4191810164ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectiblePrefabs:
+  - {fileID: 2353596665029321741, guid: 403315b05cfedf24a99b939eebe06abf, type: 3}
+  - {fileID: 6315552685179502929, guid: bff9c68042b0b9148ae5349f91065aa0, type: 3}
+  - {fileID: 7682405027818894154, guid: d57a65484e20ee742a9aab2a7ea23801, type: 3}
+  numberOfEachCollectible: 3
+  percentageOfSpawnChances: 15
 --- !u!1001 &1767066430
 PrefabInstance:
   m_ObjectHideFlags: 0
