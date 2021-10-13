@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     private const float BULLET_MAX_COOLDOWN = 0.2f;
     private float bulletCooldown = BULLET_MAX_COOLDOWN;
 
-    private float tripleBulletsTime = 5;
+    private float tripleBulletsTime = 0;
 
     // Start is called before the first frame update
     void Start()
