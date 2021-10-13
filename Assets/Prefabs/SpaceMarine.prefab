@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b005834b0e7f9247824592d1283ba36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6233331417251039615, guid: fd62ff2bd28f33548a4cd3f3e62a03fc, type: 3}
+  bullet: {fileID: 2449098431368784778, guid: de5b0492efb454c45aa7f8f84ddc0a47, type: 3}
+  tripleBulletsAngle: 30
 --- !u!1 &2993635036177043471
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +175,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9232c0ec30e85fc4bb05fc0f19e56e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   maxHealthPoints: 5
+  maxInvincibilityCooldown: 2
 --- !u!143 &2993635036177043465
 CharacterController:
   m_ObjectHideFlags: 0

@@ -15,9 +15,13 @@ public class PlayerShoot : MonoBehaviour
 
     private float tripleBulletsTime = 0;
 
+    GameManager gameManager;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+
         for (int i = 0; i < NB_BULLET; i++)
         {
             projectiles[i] = Instantiate(bullet);
@@ -77,6 +81,7 @@ public class PlayerShoot : MonoBehaviour
         if (Input.GetButton("Fire1") && tripleBulletsTime > 0)
         {
             tripleBulletsTime -= Time.deltaTime;
+            gameManager.changeMultishotText((int)tripleBulletsTime);
         }
 
         else if (tripleBulletsTime < 0) tripleBulletsTime = 0;
@@ -85,5 +90,6 @@ public class PlayerShoot : MonoBehaviour
     public void gainTripleBullets(float shootingSeconds)
     {
         this.tripleBulletsTime += shootingSeconds;
+        gameManager.changeMultishotText((int)tripleBulletsTime);
     }
 }

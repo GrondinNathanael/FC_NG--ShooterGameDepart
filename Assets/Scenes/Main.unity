@@ -759,17 +759,6 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1740324608}
-    - target: {fileID: 6946717146395103497, guid: 806dd4019cc5e0345b9e556258fb1961,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 2449098431368784778, guid: de5b0492efb454c45aa7f8f84ddc0a47,
-        type: 3}
-    - target: {fileID: 6946717146395103497, guid: 806dd4019cc5e0345b9e556258fb1961,
-        type: 3}
-      propertyPath: tripleBulletsAngle
-      value: 30
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 160579255304023850, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 806dd4019cc5e0345b9e556258fb1961, type: 3}
@@ -2636,7 +2625,7 @@ MonoBehaviour:
   - {fileID: 1526178091}
   - {fileID: 1927467857}
   - {fileID: 1767066431}
-  secondsBeforeSpawn: 3
+  secondsBeforeSpawn: 2.5
   numberAliensAtOneTime: 25
   numberMaxAliens: 500
 --- !u!4 &1740324607

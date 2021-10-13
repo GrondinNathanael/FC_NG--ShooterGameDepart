@@ -16,18 +16,23 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void changeHealth(int playerHp)
     {
         heartText.text = playerHp.ToString();
+    }
+
+    public void changeMultishotText(int seconds)
+    {
+        multishotText.text = seconds.ToString();
     }
 
     public void gameOver()
