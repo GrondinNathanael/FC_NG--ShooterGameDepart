@@ -32,7 +32,7 @@ public class HealthManager : MonoBehaviour
         if (gameObject.CompareTag("Player"))
         {
             gameManager.changeHealth(healthPoints);
-            getHurtSound.Play();
+            getHurtSound.PlayOneShot(getHurtSound.clip);
         }
     }
 
