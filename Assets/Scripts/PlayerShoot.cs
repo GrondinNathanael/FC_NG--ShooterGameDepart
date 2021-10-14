@@ -43,6 +43,11 @@ public class PlayerShoot : MonoBehaviour
             if (tripleBulletsTime > 0) shootTripleBullet();
             else shootBullet();
         }
+
+        if (Input.GetButton("Fire2"))
+        {
+            Debug.Log("FIRE IN THE HOLE");
+        }
     }
 
     private void shootBullet(float angleModification = 0)
