@@ -7,6 +7,8 @@ public class HealthManager : MonoBehaviour
     [SerializeField] private GameManager gameManager;
     [SerializeField] private int maxHealthPoints = 1;
     [SerializeField] private float maxInvincibilityCooldown = 2;
+    [SerializeField] private AudioSource getHurtSound;
+    [SerializeField] private AudioClip deathSound;
 
     private int healthPoints;
     private float invincibilityCooldown = 0;
@@ -15,7 +17,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -27,7 +29,11 @@ public class HealthManager : MonoBehaviour
     public void looseHealth(int points = 1)
     {
         healthPoints -= points;
-        if (gameObject.CompareTag("Player")) gameManager.changeHealth(healthPoints);
+        if (gameObject.CompareTag("Player"))
+        {
+            gameManager.changeHealth(healthPoints);
+            getHurtSound.Play();
+        }
     }
 
     public void gainHealth(int points = 1)
@@ -38,6 +44,9 @@ public class HealthManager : MonoBehaviour
 
     public void die()
     {
+        if (gameObject.CompareTag("Player") || gameObject.CompareTag("Enemy")) 
+            gameManager.PlayClipAt(deathSound, transform.position);
+
         gameObject.SetActive(false);
 
         if (this.gameObject.CompareTag("Enemy")) this.gameObject.GetComponent<Alien>()?.OnDeath();

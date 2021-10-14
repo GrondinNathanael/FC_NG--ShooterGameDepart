@@ -44,4 +44,15 @@ public class GameManager : MonoBehaviour
     {
         winText.gameObject.SetActive(true);
     }
+
+    public void PlayClipAt(AudioClip clip, Vector3 pos)
+    {
+        GameObject tempGO = new GameObject("TempAudio");
+        tempGO.transform.position = pos;
+        AudioSource aSource = tempGO.AddComponent<AudioSource>();
+        aSource.clip = clip;
+
+        aSource.PlayOneShot(clip);
+        Destroy(tempGO, clip.length);
+    }
 }

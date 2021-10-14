@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DieOnPlayerCollision : MonoBehaviour
 {
+    [SerializeField] private GameManager gameManager;
+    [SerializeField] private AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class DieOnPlayerCollision : MonoBehaviour
 
     private void die()
     {
+        gameManager.PlayClipAt(deathSound, transform.position);
         gameObject.SetActive(false);
     }
 }
