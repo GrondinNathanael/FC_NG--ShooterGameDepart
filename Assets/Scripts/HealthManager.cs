@@ -47,11 +47,16 @@ public class HealthManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            looseHealth();
+            GameObject shooter = other.GetComponent<BulletMovement>().getShooter();
 
-            if (healthPoints <= 0)
+            if (shooter != gameObject)
             {
-                die();
+                looseHealth();
+
+                if (healthPoints <= 0)
+                {
+                    die();
+                }
             }
         }
 

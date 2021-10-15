@@ -7,13 +7,28 @@ public class BulletMovement : MonoBehaviour
     [SerializeField] private float velocity = 5f;
     [SerializeField] private List<string> ignoredTriggers;
 
+    [SerializeField] private bool isRocket = false;
+    [SerializeField] private float defaultRocketRadius = 0.5f;
+    [SerializeField] private float rocketExplosionRadius = 2f;
+
+    SphereCollider bulletCollider;
+    ParticleSystem explosionParticleSystem;
+
+    GameObject shooter;
+
     private const float MAX_TTL = 3f;
     private float ttl = MAX_TTL;
+
+    private bool isDying = false;
+    private const float DYING_TIME = 0.1f;
+    private float timeToDie = DYING_TIME;
 
     // Start is called before the first frame update
     void Start()
     {
+        bulletCollider = GetComponent<SphereCollider>();
 
+        if (isRocket) explosionParticleSystem = GetComponents<ParticleSystem>()[0];
     }
 
     // Update is called once per frame
@@ -29,13 +44,31 @@ public class BulletMovement : MonoBehaviour
                 resetBullet();
             }
         }
+
+        if (isRocket && isDying)
+        {
+            if (timeToDie <= 0) resetBullet();
+
+            else timeToDie -= Time.deltaTime;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.activeSelf && !ignoredTriggers.Contains(other.tag))
+        if (!ignoredTriggers.Contains(other.tag))
         {
-            resetBullet();
+            if (isRocket && !isDying)
+            {
+                // On change la taille du collider pour simuler l'explosion et on commence un petit délai
+                // pour s'assurer que les créatures aient le temps de prendre en compte sa nouvelle taille.
+                bulletCollider.radius = rocketExplosionRadius;
+
+                explosionParticleSystem.Play();
+
+                isDying = true;
+            }
+
+            else if (!isDying) resetBullet();
         }
     }
 
@@ -43,5 +76,23 @@ public class BulletMovement : MonoBehaviour
     {
         gameObject.SetActive(false);
         ttl = MAX_TTL;
+
+        if (isRocket)
+        {
+            bulletCollider.radius = defaultRocketRadius;
+
+            isDying = false;
+            timeToDie = DYING_TIME;
+        }
+    }
+
+    public GameObject getShooter()
+    {
+        return shooter;
+    }
+
+    public void setShooter(GameObject newShooter)
+    {
+        shooter = newShooter;
     }
 }

@@ -46,6 +46,7 @@ public class Collectible : MonoBehaviour
                 break;
 
             case collectibleTypes.Armor:
+                playerShoot.gainRockets((int)collectValue);
                 break;
 
             case collectibleTypes.Health:

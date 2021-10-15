@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
         heartText.text = playerHp.ToString();
     }
 
+    public void changeRocketsText(int quanity)
+    {
+        rocketsText.text = quanity.ToString();
+    }
+
     public void changeMultishotText(int seconds)
     {
         multishotText.text = seconds.ToString();
