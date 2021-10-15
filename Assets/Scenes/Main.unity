@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2059,7 +2059,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396725662}
-  m_LocalRotation: {x: 0.23175052, y: 3.4076313e-15, z: -1.2350149e-15, w: 0.9727753}
+  m_LocalRotation: {x: 0.23175052, y: 1.727996e-15, z: -8.5576083e-16, w: 0.9727753}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3309,6 +3309,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4745047883783011646, guid: 45ebaf743167e90458ed12cdfeab6cbb,
         type: 3}
+      propertyPath: secondsBeforeSpawn
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745047883783011646, guid: 45ebaf743167e90458ed12cdfeab6cbb,
+        type: 3}
       propertyPath: portals.Array.data[0]
       value: 
       objectReference: {fileID: 1014524826}
@@ -3350,7 +3355,7 @@ PrefabInstance:
     - target: {fileID: 4745047883783011647, guid: 45ebaf743167e90458ed12cdfeab6cbb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4745047883783011647, guid: 45ebaf743167e90458ed12cdfeab6cbb,
         type: 3}
