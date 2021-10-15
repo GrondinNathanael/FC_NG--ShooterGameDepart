@@ -6,6 +6,9 @@ public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private GameObject bullet;
     [SerializeField] private GameObject rocket;
+    [SerializeField] private AudioSource shootSound;
+    [SerializeField] private AudioClip tripleShootSound;
+    [SerializeField] private AudioClip rocketShootSound;
     [SerializeField] private float tripleBulletsAngle = 45;
 
     private const int NB_BULLET = 50;
@@ -86,6 +89,8 @@ public class PlayerShoot : MonoBehaviour
 
                 bullet.GetComponent<BulletMovement>().setShooter(transform.parent.gameObject);
 
+                if (tripleBulletsTime <= 0) shootSound.PlayOneShot(shootSound.clip);
+
                 break;
             }
         }
@@ -99,6 +104,8 @@ public class PlayerShoot : MonoBehaviour
         shootBullet(-tripleBulletsAngle); // Left Bullet
 
         shootBullet(tripleBulletsAngle); // Right Bullet
+
+        shootSound.PlayOneShot(tripleShootSound);
     }
 
     private void handleTripleBulletsTime()
@@ -128,6 +135,8 @@ public class PlayerShoot : MonoBehaviour
                 rocket.GetComponent<BulletMovement>().setShooter(transform.parent.gameObject);
 
                 rocket.SetActive(true);
+
+                shootSound.PlayOneShot(rocketShootSound);
                 break;
             }
         }
