@@ -103,13 +103,17 @@ public class PlayerShoot : MonoBehaviour
 
     private void handleTripleBulletsTime()
     {
-        if (Input.GetButton("Fire1") && tripleBulletsTime > 0)
+        if (tripleBulletsTime > 0)
         {
             tripleBulletsTime -= Time.deltaTime;
             gameManager.changeMultishotText((int)tripleBulletsTime);
         }
 
-        else if (tripleBulletsTime < 0) tripleBulletsTime = 0;
+        else if (tripleBulletsTime < 0)
+        {
+            tripleBulletsTime = 0;
+            gameManager.changeMultishotText((int)tripleBulletsTime);
+        }
     }
 
     private void shootRocket()
