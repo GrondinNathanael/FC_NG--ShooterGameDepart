@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text winText;
     [SerializeField] private VictorySoundTrigger victoryTigger;
 
-    private int multishotTTL = 0;
-    private int nbRocket = 0;
     private bool isWinCalled = false;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +22,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Submit"))
         {
             Application.Quit();
         }

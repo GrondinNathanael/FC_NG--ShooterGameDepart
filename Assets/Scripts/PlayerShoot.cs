@@ -13,7 +13,7 @@ public class PlayerShoot : MonoBehaviour
     private const float BULLET_MAX_COOLDOWN = 0.2f;
     private float bulletCooldown = BULLET_MAX_COOLDOWN;
 
-    private const int NB_ROCKET = 50;
+    private const int NB_ROCKET = 5;
     private GameObject[] rockets = new GameObject[NB_ROCKET];
     private const float ROCKET_MAX_COOLDOWN = 1f;
     private float rocketCooldown = ROCKET_MAX_COOLDOWN;
