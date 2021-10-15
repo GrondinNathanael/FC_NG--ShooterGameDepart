@@ -4934,13 +4934,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 20
+  damage: 5
   ignoredTriggers:
   - Player
   - Collectible
   - Bullet
   isRocket: 1
   defaultRocketRadius: 0.5
-  rocketExplosionRadius: 8
+  rocketExplosionRadius: 12
 --- !u!199 &5644444325652811533
 ParticleSystemRenderer:
   serializedVersion: 6

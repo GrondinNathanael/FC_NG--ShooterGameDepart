@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour
 {
     [SerializeField] private float velocity = 5f;
+    [SerializeField] private int damage = 1;
     [SerializeField] private List<string> ignoredTriggers;
 
     [SerializeField] private bool isRocket = false;
@@ -94,5 +95,10 @@ public class BulletMovement : MonoBehaviour
     public void setShooter(GameObject newShooter)
     {
         shooter = newShooter;
+    }
+
+    public int getDamage()
+    {
+        return damage;
     }
 }
