@@ -57,7 +57,7 @@ public class PlayerShoot : MonoBehaviour
             else shootBullet();
         }
 
-        else if (Input.GetButton("Fire2") && rocketCooldown >= ROCKET_MAX_COOLDOWN && nbRockets > 0)
+        else if (!Input.GetButton("Fire1") && Input.GetButton("Fire2") && rocketCooldown >= ROCKET_MAX_COOLDOWN && nbRockets > 0)
         {
             rocketCooldown = 0;
 
