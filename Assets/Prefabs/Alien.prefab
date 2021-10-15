@@ -1208,6 +1208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 559d7c9a655f7514b8ea7dff6c900ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 4745047883783011520, guid: 45ebaf743167e90458ed12cdfeab6cbb,
+    type: 3}
+  deathSound: {fileID: 8300000, guid: 8f252cb39a2a2da44aefd3d09599af53, type: 3}
 --- !u!114 &3599979555604339650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,7 +1223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9232c0ec30e85fc4bb05fc0f19e56e27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 4745047883783011520, guid: 45ebaf743167e90458ed12cdfeab6cbb,
+    type: 3}
   maxHealthPoints: 1
+  maxInvincibilityCooldown: 2
+  getHurtSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: 8f252cb39a2a2da44aefd3d09599af53, type: 3}
 --- !u!135 &1100858814434538394
 SphereCollider:
   m_ObjectHideFlags: 0

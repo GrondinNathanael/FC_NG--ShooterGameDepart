@@ -18,7 +18,7 @@ public class PlayerShoot : MonoBehaviour
     private const float ROCKET_MAX_COOLDOWN = 1f;
     private float rocketCooldown = ROCKET_MAX_COOLDOWN;
 
-    private int nbRockets = 5;
+    private int nbRockets = 0;
     private float tripleBulletsTime = 0;
 
     GameManager gameManager;
