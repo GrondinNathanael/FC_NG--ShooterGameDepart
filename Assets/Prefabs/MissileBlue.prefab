@@ -4933,7 +4933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56571919dddf50847afa5e8e8be4cc6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
+  velocity: 40
   damage: 5
   ignoredTriggers:
   - Player
